@@ -1,0 +1,10 @@
+{% if title %}
+  <title>{{ title }}</title>
+{% else %}
+  <title>Просто страница</title>
+{% endif %}
+
+{% block content %}
+  {% block app_content %}{% endblock %}
+{% endblock %}
+
