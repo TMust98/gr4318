@@ -6,10 +6,24 @@
   <title>Просто страница</title>
 {% endif %}
 
-{% block content %}
-  <div><a href="/index">INDEX</a></div>
-  <div><a href="/login">LOGIN</a></div>
 
+{% block navbar %}
+  <nav class="navbar navbar-default navbar-static">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse js-navbar">
+        <ul class="nav navbar-nav">
+          <li><a href="{{ url_for('index') }}">INDEX</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock %}
+
+
+{% block content %}
   <div class="container">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
